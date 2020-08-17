@@ -154,7 +154,7 @@ const getUserById = async(userId: number) => {
  * @param username 
  */
 const getUserByUsername = async(username: string) => {
-    const sql = 'SELECT user_id, username, email, register_date * FROM users WHERE username = %L'
+    const sql = 'SELECT * FROM users WHERE username = %L'
     const query = format.withArray(sql, [username]);
     return (await DB.query(query))[0];
 }
